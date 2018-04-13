@@ -9,3 +9,7 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
+
+setTimeout(() => {
+    document.body.classList.add('loaded');
+}, 3000);
