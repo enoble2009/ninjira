@@ -1,32 +1,29 @@
-<div class="left-menu">
-	<ul>
-<!--		
-		<li (click)="goBack()">
-			<fa name="arrow-left" title="Volver"></fa>
-		</li>
--->
-		<li (click)="goPage('/home')">
-			<fa name="home" title="Principal"></fa>
-		</li>
-		<li (click)="goPage('/planning')">
-			<fa name="bar-chart" title="Planificacion"></fa>
-		</li>
-		<li (click)="goPage('/users')">
-			<fa name="users" title="Usuarios"></fa>
-		</li>
-		<li (click)="goPage('/tasks')">
-			<fa name="tasks" title="Tareas"></fa>
-		</li>
-	</ul>
-</div>
+<app-menu (closeevent)="notifyMenuStatus($event)"></app-menu>
 
-<div class="header-buttons">
+<div class="page-content {{ closedMenu? 'closed': '' }}">
+	<div class="header-buttons">
+		<button class="btn btn-primary" (click)="createUser()">Crear usuario</button>
+	</div>
+	<div class="users-container">
+		<mat-table [dataSource]="dataSource">
+			<ng-container matColumnDef="name">
+		      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+		      <mat-cell *matCellDef="let user"> {{user.name}} </mat-cell>
+		    </ng-container>
+		    <ng-container matColumnDef="email">
+		      <mat-header-cell *matHeaderCellDef> E-Mail </mat-header-cell>
+		      <mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
+		    </ng-container>
+		    <ng-container matColumnDef="phone">
+		      <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
+		      <mat-cell *matCellDef="let user"> {{user.phone}} </mat-cell>
+		    </ng-container>
+		    <ng-container matColumnDef="company">
+		      <mat-header-cell *matHeaderCellDef> Company </mat-header-cell>
+		      <mat-cell *matCellDef="let user"> {{user.company.name}} </mat-cell>
+		    </ng-container>
+		    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+		    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+		</mat-table>
+	</div>
 </div>
-<div class="users-container">
-	<ul class="users-list">
-		<li ng-repeat="user in users">
-			
-		</li>
-	</ul>
-</div>
-

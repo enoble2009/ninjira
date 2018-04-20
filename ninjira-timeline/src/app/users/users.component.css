@@ -1,46 +1,19 @@
-.left-menu {
-	position: fixed;
-    top: 5%;
-    height: 90%;
-    left: 0;
-    width: 50px;
-    background: #113B51;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+.page-content {
+	padding-left: 250px;
+	transition: padding 0.6s ease-in;
+	min-height: 735px;
+    background: #FEFEFE;
 }
 
-.left-menu ul li fa {
-	color: lightgrey;
-    margin-left: 10px;
-    font-size: 2rem;
-    position: absolute;
-    top: 3px;
-}
-.left-menu ul li:hover fa {
-	color: white;
-}
-.left-menu ul li fa[name="arrow-left"] {
-	color: #adc51d;
-}
-.left-menu ul li:hover fa[name="arrow-left"] {
-	color: #cde928;
-}
-.left-menu ul li fa[name="bar-chart"], .left-menu ul li fa[name="users"],
-	.left-menu ul li fa[name="tasks"] {
-    font-size: 1.6rem;
-    margin-left: 12px;
-    top: 8px;
+.page-content.closed {
+	padding-left: 50px;
 }
 
-.left-menu ul li {
-    list-style: none;
-    position: relative;
-    height: 45px;
-    cursor: pointer;
+.page-content .header-buttons {
+    min-height: 40px;
+    background: #EFEFEF;
+    border-bottom: 1px solid black;
+    padding: 5px;
 }
-.left-menu ul li:hover {
-	background: #1b5675
-}
-.left-menu ul {
-    -webkit-padding-start: 0px;
+.page-content .header-buttons  {
 }

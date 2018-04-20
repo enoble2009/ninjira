@@ -1,0 +1,31 @@
+<div class="menu {{leftMenu.closed? 'closed': ''}}">
+	<div (click)="toggleMenu()" class="close-icon"></div>
+	<div class="left-menu">
+		<div class="header">
+			<p>NINJIRA</p>
+		</div>
+		<ul>
+	<!--		
+			<li (click)="goBack()">
+				<fa name="arrow-left" title="Volver"></fa>
+			</li>
+	-->
+			<li (click)="goPage('/home')">
+				<fa name="home" title="Principal"></fa>
+				<span>Página principal</span>
+			</li>
+			<li (click)="goPage('/planning')">
+				<fa name="bar-chart" title="Planificacion"></fa>
+				<span>Planificación</span>
+			</li>
+			<li (click)="goPage('/users')">
+				<fa name="users" title="Usuarios"></fa>
+				<span>Usuarios</span>
+			</li>
+			<li (click)="goPage('/tasks')">
+				<fa name="tasks" title="Tareas"></fa>
+				<span>Tareas</span>
+			</li>
+		</ul>
+	</div>
+</div>

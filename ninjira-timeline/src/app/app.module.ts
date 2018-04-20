@@ -10,7 +10,14 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
 import { UsersComponent } from './users/users.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { PlanningComponent } from './planning/planning.component';
-import { MenuDirective } from './menu.directive';
+import { MenuComponent } from './menu/menu.component';
+import { MatTableModule, MatDialogModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { UserCreationComponent } from './user-creation/user-creation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,17 +27,27 @@ import { MenuDirective } from './menu.directive';
     UsersComponent,
     TasksComponent,
     PlanningComponent,
-    MenuDirective
+    MenuComponent,
+    UserCreationComponent
+  ],
+  entryComponents: [
+    UserCreationComponent
   ],
   imports: [
     BrowserModule,
     routing,
-    Angular2FontawesomeModule
+    Angular2FontawesomeModule,
+    MatTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   exports: [
     RouterModule // se importará desde el módulo padre
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

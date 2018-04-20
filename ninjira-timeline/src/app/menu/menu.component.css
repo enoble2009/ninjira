@@ -1,0 +1,112 @@
+.menu .left-menu {
+	position: fixed;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 250px;
+    background: #EFEFEF;
+    transition: width 0.6s ease-in;
+    overflow: hidden;
+    border-right: 1px solid #113B51;
+}
+.menu.closed .left-menu {
+    width: 50px;
+}
+
+.menu .left-menu .header {
+    border-bottom: 1px solid darkgray;
+}
+.menu .left-menu .header p {
+    color: #113B51;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.menu .left-menu ul li fa {
+	color: #113B51;
+    margin-left: 10px;
+    font-size: 2rem;
+    position: absolute;
+    top: 3px;
+}
+.menu .left-menu ul li:hover fa, .menu .left-menu ul li:hover span {
+	color: white;
+}
+.menu .left-menu ul li fa[name="arrow-left"] {
+	color: #adc51d;
+}
+.menu .left-menu ul li:hover fa[name="arrow-left"] {
+	color: #cde928;
+}
+.menu .left-menu ul li fa[name="bar-chart"], .left-menu ul li fa[name="users"],
+	.left-menu ul li fa[name="tasks"] {
+    font-size: 1.6rem;
+    margin-left: 12px;
+    top: 8px;
+}
+
+.menu .left-menu ul li {
+    list-style: none;
+    position: relative;
+    height: 55px;
+    cursor: pointer;
+}
+.menu .left-menu ul li:hover {
+	background: #1b5675
+}
+.menu .left-menu ul {
+    -webkit-padding-start: 0px;
+}
+
+.menu .close-icon {
+    position: fixed;
+    top: 50%;
+    left: 260px;
+    height: 30px;
+    width: 5px;
+    background: grey;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: all .6s ease;
+    cursor: pointer;
+}
+
+.menu .close-icon:hover {
+    width: 10px;
+    left: 255px;
+    background: green;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.menu.closed .close-icon {
+    left: 55px;
+}
+
+.menu.closed .close-icon:hover {
+    left: 55px;
+    background: green;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.menu .left-menu li span {
+    color: #113B51;
+    font-size: 1.4rem;
+    left: 60px;
+    position: absolute;
+    top: 15px;
+    font-family: monospace;
+}
+
+.menu .left-menu li span, .menu .left-menu .header p {
+    opacity: 1;
+    transition: opacity 0.6s ease-in;
+}
+
+.menu.closed .left-menu li span, .menu.closed .left-menu .header p {
+    opacity: 0;
+}
